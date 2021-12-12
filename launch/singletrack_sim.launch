@@ -1,0 +1,7 @@
+<launch>
+  <!--- Run single track simulator node -->
+  <node pkg="singletrack_sim" type="singletrack_sim" respawn="false" name="singletrack_sim" output="screen">
+    <rosparam file="$(find singletrack_sim)/config/singletrack_sim.yaml" command="load" />
+    <rosparam param="/use_sim_time">true</rosparam>
+  </node> 
+</launch>

@@ -1,0 +1,22 @@
+# Simulator configuration parameters
+  /singletrack_sim/tyre_model: 0                   # Tyre model (0, linear; 1, fiala with saturation; 2, fiala without saturation)
+
+  /singletrack_sim/dt: 0.001                       # Integration step
+
+# Vehicle parameters
+  /singletrack_sim/m: 2.0                          # Vehicle mass
+  /singletrack_sim/cog_a: 0.14                     # Distance of COG from front axle
+  /singletrack_sim/cog_b: 0.12                     # Distance of COG from rear axle
+  /singletrack_sim/mu: 0.385                       # Ground friction coefficient
+  /singletrack_sim/Cf: 50.0                        # Front cornering stiffness
+  /singletrack_sim/Cr: 122.0                       # Rear cornering stiffness
+  /singletrack_sim/Iz: 0.030                       # Yaw moment of inertia
+
+
+# Vehicle initial state
+  /singletrack_sim/r0: 0.0                         # Initial yaw rate
+  /singletrack_sim/beta0: 0.0                      # Initial sideslip
+  /singletrack_sim/x0: 0.0                         # Initial position x
+  /singletrack_sim/y0: 0.0                         # Initial position y
+  /singletrack_sim/psi0: 0.0                       # Initial heading
+
