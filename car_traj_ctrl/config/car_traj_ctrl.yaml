@@ -1,0 +1,11 @@
+# Simulator configuration parameters
+  /car_traj_ctrl/dt: 0.001                   # Integration step
+
+# Vehicle parameters
+  /car_traj_ctrl/L: 0.26                     # Vehicle length
+
+# Vehicle initial state
+  /car_traj_ctrl/x0: 0.0                     # Initial position x
+  /car_traj_ctrl/y0: 0.0                     # Initial position y
+  /car_traj_ctrl/theta0: 0.0                 # Initial heading
+

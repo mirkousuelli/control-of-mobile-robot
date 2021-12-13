@@ -1,0 +1,7 @@
+<launch>
+  <!--- Run bicycle simulator node -->
+  <node pkg="car_traj_ctrl" type="car_traj_ctrl" respawn="false" name="car_traj_ctrl" output="screen">
+    <rosparam file="$(find car_traj_ctrl)/config/car_traj_ctrl.yaml" command="load" />
+    <rosparam param="/use_sim_time">true</rosparam>
+  </node> 
+</launch>
