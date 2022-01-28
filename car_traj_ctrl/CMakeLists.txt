@@ -123,7 +123,7 @@ include_directories(
 add_executable(car_traj_ctrl src/car_traj_ctrl.cpp src/car_traj_ctrl_node.cpp src/bicycle_ode.cpp)
 target_link_libraries(car_traj_ctrl ${catkin_LIBRARIES})
 
-add_executable(test_car_eight src/test_eight.cpp src/test_eight_node.cpp)
+add_executable(test_car_eight src/test_car_eight.cpp src/test_car_eight_node.cpp)
 target_link_libraries(test_car_eight ${catkin_LIBRARIES})
 
 ## Declare a C++ library

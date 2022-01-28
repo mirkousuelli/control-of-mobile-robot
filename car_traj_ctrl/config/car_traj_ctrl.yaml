@@ -3,9 +3,30 @@
 
 # Vehicle parameters
   /car_traj_ctrl/L: 0.26                     # Vehicle length
+  /car_traj_ctrl/eps: 0.01                   # Chasis point distance
 
 # Vehicle initial state
   /car_traj_ctrl/x0: 0.0                     # Initial position x
   /car_traj_ctrl/y0: 0.0                     # Initial position y
   /car_traj_ctrl/theta0: 0.0                 # Initial heading
 
+# Simulator configuration parameters
+  /test_car_eight/dt: 0.001                  # Integration step
+
+# Vehicle parameters
+  /test_car_eight/L: 0.26                    # Vehicle length
+  /test_car_eight/theta: 0.0                 # Initial heading
+  /test_car_eight/eps: 0.01                  # Chasis point distance
+
+# Trajectory parameters
+  /test_car_eight/a: 2.0                     # trajectory magnitued
+  /test_car_eight/T: 6.3                     # trajectory period
+
+# PI Controller
+  /test_car_eight/Kpx: 0.5                   # proportional gain on x (P)
+  /test_car_eight/Kpy: 0.5                   # proportional gain on y (P)
+
+  /test_car_eight/Tix: 0.05                  # integral time constant on x (I)
+  /test_car_eight/Tiy: 0.05                  # integral time constant on y (I)
+
+  /test_car_eight/Ts: 0.001                  # sampling time (Forward Euler discretisation)

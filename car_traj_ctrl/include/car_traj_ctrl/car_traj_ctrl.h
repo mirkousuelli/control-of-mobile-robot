@@ -18,12 +18,16 @@ class car_traj_ctrl
     /* ROS topics */
     ros::Subscriber vehicleCommand_subscriber;
     ros::Publisher vehicleState_publisher;
+    ros::Publisher vehicleHeading_publisher;
+    ros::Publisher vehiclePosition_publisher;
     ros::Publisher clock_publisher;
 
     /* Parameters from ROS parameter server */
     double dt;
     double L;
     double x0, y0, theta0, phi0;
+    double eps;
+    double xp, yp;
 
     /* ROS topic callbacks */
     void vehicleCommand_MessageCallback(const std_msgs::Float64MultiArray::ConstPtr& msg);
