@@ -38,8 +38,9 @@ class test_car_eight
     double Ts;
 
     double err_x, err_y;
-    double I_x_now, I_y_now;
-    double I_x_prev, I_y_prev;
+    double I_x, I_y;
+
+    double max_err_x, max_err_y;
 
     /* ROS topic callbacks */
     void vehicleHeading_MessageCallback(const std_msgs::Float64MultiArray::ConstPtr& msg);

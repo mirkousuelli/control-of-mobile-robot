@@ -40,12 +40,12 @@ void test_simple::PeriodicTask(void)
     if (ros::Time::now().toSec()<=5.0)
     {
         speed = 1.0;
-        steer = 0.0;
+        steer = 1.0;
     }
     else
     {
         speed = 0.0;
-        steer = 0.1;
+        steer = 0.0;
     }
 
     /* Publishing vehicle commands (t, msg->data[0]; velocity, msg->data[1]; steer, msg->data[2]) */

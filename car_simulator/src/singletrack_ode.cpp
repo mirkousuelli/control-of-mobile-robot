@@ -45,7 +45,7 @@ void singletrack_ode::setVehicleParams(double m, double a, double b, double Cf, 
 
 void singletrack_ode::setReferenceCommands(double velocity, double steer)
 {
-    Vx    = velocity;
+    Vx = velocity;
     delta = steer;
 }
 

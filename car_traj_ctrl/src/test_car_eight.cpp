@@ -67,8 +67,8 @@ void test_car_eight::Prepare(void)
     steer = speed = 0.0;
     xp = yp = 0.0;
     err_x = err_y = 0.0;
-    I_x_now = I_x_prev = 0.0;
-    I_y_now = I_y_prev = 0.0;
+    I_x = I_y = 0.0;
+    max_err_x = max_err_y = 0.0;
 
     ROS_INFO("Node %s ready to run.", ros::this_node::getName().c_str());
 }
@@ -117,23 +117,26 @@ void test_car_eight::PeriodicTask(void)
     yref    = a*std::sin(w*ros::Time::now().toSec())*std::cos(w*ros::Time::now().toSec());
     dyref   = w*a*(std::pow(std::cos(w*ros::Time::now().toSec()),2.0)-std::pow(std::sin(w*ros::Time::now().toSec()),2.0));
 
-    /* Vehicle commands */
-
     // position error
     err_x = (xref - xp);
     err_y = (yref - yp);
 
-    // integral component (now) with Forward Euler discretization
-    I_x_now = I_x_prev + (Ts / Tix) * err_x;
-    I_y_now = I_y_prev + (Ts / Tiy) * err_y;
+    if (max_err_x < std::fabs(err_x) || max_err_y < std::fabs(err_y)) {
+        if (max_err_x < std::fabs(err_x)) {
+            max_err_x = std::fabs(err_x); 
+        } else {
+            max_err_y = std::fabs(err_y);
+        }
+        ROS_INFO("Last maximum error (X, Y) : (%.4f, %.4f)", max_err_x, max_err_y);
+    }
+
+    // integral component with Backward Euler discretization
+    I_x += Ts * Kpx * err_x / Tix;
+    I_y += Ts * Kpy * err_y / Tiy;
 
     // Feedback linearization - PI Controller
-    Vxp = dxref + Kpx * (err_x + I_x_now);
-    Vyp = dyref + Kpy * (err_y + I_y_now);
-
-    // integral component (previous)
-    I_x_prev = I_x_now;
-    I_y_prev = I_y_now;
+    Vxp = dxref + Kpx * err_x + I_x;
+    Vyp = dyref + Kpy * err_y + I_y;
 
     // Control law equations
     speed = Vxp * std::cos(theta) + Vyp * std::sin(theta);
