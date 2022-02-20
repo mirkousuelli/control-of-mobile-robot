@@ -17,7 +17,7 @@ Control of Mobile Robots course project 2021/2022 - Politecnico di Milano.
   $ roscore
 ```
 
-## Bicycle Kinematic Model – [car_traj_ctrl] package
+## Bicycle Kinematic Model – `car_traj_ctrl` package
 <img src="/imgs/bicycle_kinematic.png" alt="drawing" width="400"/>
 
 - Open a new terminal and record the robot activity through a rosbag in this manner by reading the topic `car_state`:
@@ -39,7 +39,7 @@ Control of Mobile Robots course project 2021/2022 - Politecnico di Milano.
 ```
 - Now you can see the result produced by the execution you recorded.
     
-## Single-Track Dynamic Model – [car_simulator] package
+## Single-Track Dynamic Model – `car_simulator` package
 <img src="/imgs/bicycle_dynamic.png" alt="drawing" width="800"/>
 
 - Open a new terminal and record the robot activity through a rosbag in this manner by reading the topic `car_state`:
