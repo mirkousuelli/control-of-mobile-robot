@@ -18,7 +18,8 @@ Control of Mobile Robots course project 2021/2022 - Politecnico di Milano.
 ```
 
 ## Bicycle Kinematic Model – [car_traj_ctrl] package
-<img src="/imgs/bicycle_kinematic.png" alt="drawing" width="800"/>
+<img src="/imgs/bicycle_kinematic.png" alt="drawing" width="400"/>
+
 - Open a new terminal and record the robot activity through a rosbag in this manner by reading the topic `car_state`:
 ```
   $ cd <path>/catkin_ws/src/car_traj_ctrl/script
@@ -40,6 +41,7 @@ Control of Mobile Robots course project 2021/2022 - Politecnico di Milano.
     
 ## Single-Track Dynamic Model – [car_simulator] package
 <img src="/imgs/bicycle_dynamic.png" alt="drawing" width="800"/>
+
 - Open a new terminal and record the robot activity through a rosbag in this manner by reading the topic `car_state`:
 ```
   $ cd <path>/catkin_ws/src/car_simulator/script
