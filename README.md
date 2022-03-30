@@ -6,7 +6,7 @@ Control of Mobile Robots course project 2021/2022 - Politecnico di Milano.
   $ mv car_traj_ctrl <path>/catkin_ws/src
   $ mv car_simulator <path>/catkin_ws/src
 ```
-- Go to your own \texttt{catkin\_ws} folder in the system and recompile everything by doing:
+- Go to your own *catkin_ws* folder in the system and recompile everything by doing:
 ```
   $ cd <path>/catkin_ws
   $ source ./devel/setup.bash
